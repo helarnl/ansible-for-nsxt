@@ -152,7 +152,7 @@ def upload_mub(module, mgr_url, mgr_username, mgr_password, validate_certs, requ
         (rc, resp) = request(mgr_url + endpoint, data=body, headers=headers, 
                              method='POST', url_username=mgr_username, 
                              url_password=mgr_password, validate_certs=validate_certs, 
-                             ignore_errors=True)
+                             ignore_errors=True, timeout=timeout)
         if rc == 200:
             bundle_id = 'latest'#resp['bundle_id']
             headers = dict(Accept="application/json")
